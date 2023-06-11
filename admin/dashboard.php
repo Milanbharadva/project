@@ -43,17 +43,60 @@ if (!isset($_SESSION['email'])) {
                 <section class="content">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-lg-6 col-6">
+                            <div class=" col-6">
                                 <div class="small-box bg-info">
                                     <div class="inner">
-                                        <h3>150</h3>
-
-                                        <p>New Orders</p>
+                                        <?php
+                                        include_once('include/config.php');
+                                        $qry = "SELECT ID FROM category";
+                                        $res = mysqli_query($conn, $qry);
+                                        $count = mysqli_num_rows($res);
+                                        ?>
+                                        <h3><?php echo $count; ?></h3>
+                                        <p>Categories</p>
                                     </div>
                                     <div class="icon">
                                         <i class="ion ion-bag"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="category.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                            <div class=" col-6">
+                                <div class="small-box bg-info">
+                                    <div class="inner">
+                                        <?php
+                                        include_once('include/config.php');
+                                        $qry = "SELECT ID FROM product";
+                                        $res = mysqli_query($conn, $qry);
+                                        $count = mysqli_num_rows($res);
+                                        ?>
+                                        <h3><?php echo $count; ?></h3>
+
+                                        <p>Products</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="ion ion-bag"></i>
+                                    </div>
+                                    <a href="product.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                                </div>
+                            </div>
+                          
+                            <div class="col-lg-6 col-6">
+                                <div class="small-box bg-warning">
+                                    <div class="inner">
+                                        <?php
+                                        include_once('include/config.php');
+                                        $qry = "SELECT ID FROM user";
+                                        $res = mysqli_query($conn, $qry);
+                                        $count = mysqli_num_rows($res);
+                                        ?>
+                                        <h3><?php echo $count; ?></h3>
+                                        <p>User Registrations</p>
+                                    </div>
+                                    <div class="icon">
+                                        <i class="ion ion-person-add"></i>
+                                    </div>
+                                    <a href="user.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-6">
@@ -64,18 +107,6 @@ if (!isset($_SESSION['email'])) {
                                     </div>
                                     <div class="icon">
                                         <i class="ion ion-stats-bars"></i>
-                                    </div>
-                                    <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-6">
-                                <div class="small-box bg-warning">
-                                    <div class="inner">
-                                        <h3>44</h3>
-                                        <p>User Registrations</p>
-                                    </div>
-                                    <div class="icon">
-                                        <i class="ion ion-person-add"></i>
                                     </div>
                                     <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                                 </div>
